@@ -114,3 +114,34 @@ test('renders learn react link',()=>{
 -getByRole() is used to match given element type with type of element i.e textbox 
 -getByPlaceholderText() is used to match given text with placeholder of element 
 -expect().toHaveAttribute(attribute,value); is used to check attribute is present with specified value 
+
+2]describe() is used to group related test cases to together for execution and 'ONLY' & 'SKIP' are attributes of it . i.e describe.skip 
+example - 
+describe("UI test case group",()=>{
+    //test case 1 
+
+    //test case 2
+})
+
+3]Testing with events
+-Includes Onchange event , click event 
+
+4]beforeAll, beforeEach , AfterAll and afterEach
+
+5]getByTestId("btn1") - used in RTL to select an element using data-testid attribute 
+example - 
+<button data-testid="btn1">Click Me</button>
+
+6]We can find single and multiple elements using RTL queries i.getBy(single) and getAllBy(multiple)
+
+7]Assertion methods - 
+1.toBeInTheDocument() - to check in the document 
+2.toHaveValue()
+3.toBeEnabled()
+4.toBeDisabled() 
+5.toHaveAttribute()
+6.toHaveClass() 
+
+9]API Testing -
+-Mostly we test rest api by mocking i.e MSW stands for MOCK SERVICE WORKER also we can mock apis with jest but option - 1 is recommended . 
+https://chatgpt.com/share/69ca5825-9ef0-83e8-9265-7ce1ef4044d9
