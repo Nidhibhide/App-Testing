@@ -24,7 +24,7 @@ describe("Create book api test ", () => {
     });
 
     //This is the request payload.
-    const response = await request(app).post("/api/book").send({
+    const response = await request(app).post("/api/books").send({
       title: "Atomic Habits",
       author: "James Clear",
       price: 499,
@@ -41,7 +41,7 @@ describe("Create book api test ", () => {
   //TEST CASE - 2
   //Check API handles wrong input.
   test("", async () => {
-    const res = await request(app).post("/api/book").send({
+    const res = await request(app).post("/api/books").send({
       author: "James Clear",
       price: 499,
       publishedYear: 2018,
@@ -61,7 +61,7 @@ describe("Create book api test ", () => {
       new Error("Database crashed"),
     );
 
-    const res = await request(app).post("/api/book").send({
+    const res = await request(app).post("/api/books").send({
       // _id: "123",
       title: "Atomic Habits",
       author: "James Clear",

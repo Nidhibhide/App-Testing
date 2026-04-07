@@ -25,7 +25,7 @@ describe("Update Book API Test", () => {
       publishedYear: 2018,
       genre: "Self Help",
     });
-    const response = await request(app).put("/api/book/123").send({
+    const response = await request(app).put("/api/books/123").send({
       title: "Atomic Habits Updated",
       price: 599,
     });
@@ -40,10 +40,10 @@ describe("Update Book API Test", () => {
 test("should return 404 if book not found", async () => {
   (BookModel.findByIdAndUpdate as jest.Mock).mockResolvedValue(null);
 
-  const res = await request(app).put("/api/book/123").send({
+  const res = await request(app).put("/api/books/123").send({
     title: "New Title",
   });
   expect(res.status).toBe(404);
   expect(res.body.success).toBe(false);
-  expect(res.body.message).toBe("Book not foind");
+  expect(res.body.message).toBe("Book not found");
 });

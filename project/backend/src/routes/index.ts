@@ -10,7 +10,7 @@ router.get("/health", (_req: Request, res: Response) => {
 });
 
 // Mount other routes
-router.use("/book", userRoutes);
+router.use("/books", userRoutes);
 
 
 export default router;

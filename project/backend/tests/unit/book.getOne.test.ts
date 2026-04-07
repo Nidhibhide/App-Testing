@@ -22,7 +22,7 @@ describe("Get Book By Id api test", () => {
       publishedYear: 2018,
       genre: "Self Help",
     });
-    const res = await request(app).get("/api/book/123");
+    const res = await request(app).get("/api/books/123");
     expect(BookModel.findById).toHaveBeenCalledWith("123");
     expect(res.status).toBe(200);
     expect(res.body.success).toBe(true);
@@ -33,7 +33,7 @@ describe("Get Book By Id api test", () => {
   test("should return 404 if book not found", async () => {
     //DB returns null
     (BookModel.findById as jest.Mock).mockResolvedValue(null);
-    const res = await request(app).get("/api/book/124");
+    const res = await request(app).get("/api/books/124");
 
     expect(res.status).toBe(404);
     expect(res.body.success).toBe(false);
