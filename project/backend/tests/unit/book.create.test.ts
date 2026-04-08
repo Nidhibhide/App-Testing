@@ -13,7 +13,8 @@ describe("Create book api test ", () => {
   //TEST 1- SUCCESS CASE
   //Check API works correctly when valid data is sent.
   test("should create book successfully", async () => {
-    //   //FAKE DB RESPONSE - What DATABASE returns
+    //FAKE DB RESPONSE - What DATABASE returns
+    //Pretend the database saved it and returned this result.
     (BookModel.create as jest.Mock).mockResolvedValue({
       // _id: "123",
       title: "Atomic Habits",

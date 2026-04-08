@@ -2,7 +2,7 @@
 module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/*.test.ts'],
-  testPathIgnorePatterns: ['/node_modules/', '/tests/integration/'],
+  testPathIgnorePatterns: ['/node_modules/'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   },
